@@ -1,7 +1,10 @@
 import { Type } from "@angular/core";
-import { NgRassemblerNode } from "./node";
+import { RassemblerNode } from "./node";
 
-export interface NgRassemblerBlueprints {
+export interface RassemblerBlueprints {
+
     mapping: Map<String, Type<any>>;
-    nodes: NgRassemblerNode[];
+
+    nodes: RassemblerNode[];
+    
 }

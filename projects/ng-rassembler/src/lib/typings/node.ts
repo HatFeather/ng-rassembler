@@ -1,5 +1,8 @@
 
-export interface NgRassemblerNode {
+export interface RassemblerNode {
+
     tag: String;
-    children: NgRassemblerNode[];
+    
+    children: RassemblerNode[];
+
 }
