@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { NgRassemblerComponent } from './ng-rassembler.component';
 
-
-
 @NgModule({
-  declarations: [NgRassemblerComponent],
+  declarations: [
+    NgRassemblerComponent
+  ],
   imports: [
   ],
-  exports: [NgRassemblerComponent]
+  exports: [
+    NgRassemblerComponent
+  ]
 })
 export class NgRassemblerModule { }
