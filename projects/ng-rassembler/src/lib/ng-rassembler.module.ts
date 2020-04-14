@@ -1,19 +1,24 @@
 import {
-  NgModule
+  NgModule,
 } from '@angular/core';
 
 import {
-  RassemblyComponent
+  RassemblyComponent,
 } from './components';
 
 import {
-  RassemblyDirective
+  RassemblyDirective,
 } from './directives';
+
+import {
+  RassemblerService,
+} from './services';
 
 @NgModule({
   declarations: [
     RassemblyComponent,
     RassemblyDirective,
+    RassemblerService,
   ],
   imports: [
 
@@ -21,6 +26,7 @@ import {
   exports: [
     RassemblyComponent,
     RassemblyDirective,
+    RassemblerService,
   ]
 })
 export class NgRassemblerModule { }
