@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,9 +24,10 @@ import { TestBoxComponent } from './components/test-box/test-box.component';
     BrowserModule,
     AppRoutingModule,
     NgRassemblerModule,
+    MatButtonModule,
   ],
   providers: [
-    
+
   ],
   bootstrap: [
     AppComponent,

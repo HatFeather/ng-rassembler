@@ -19,16 +19,26 @@ export class LinearRassemblyPageComponent implements OnInit {
           tag: 'test-box',
           data: {
             color: '#00FF00',
-            text: 'This is the first component!'
+            text: 'This is the first component!',
+            height: '300px',
           },
         },
         {
           tag: 'test-box',
           data: {
             color: '#FF0000',
-            text: 'This is the second component!'
+            text: 'This is the second component!',
+            height: '90px',
           },
-        }
+        },
+        {
+          tag: 'test-box',
+          data: {
+            color: '#FF00FF',
+            text: 'This is the third component!',
+            height: '120px',
+          },
+        },
       ],
     },
   };
