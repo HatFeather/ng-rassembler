@@ -12,8 +12,8 @@ import {
 } from '../../typings';
 
 import {
-  RassemblyComponent,
-} from '../rassembly';
+  RassemblyDirective
+} from '../../directives';
 
 @Component({
   selector: 'ng-rassembler',
@@ -25,8 +25,8 @@ export class RassemblerComponent implements AfterContentInit {
   @Input() blueprints: RassemblerBlueprints;
 
   @ContentChild(
-    RassemblyComponent,
-  ) root: RassemblyComponent;
+    RassemblyDirective,
+  ) rassembly: RassemblyDirective;
 
   constructor(
     private cfresolver: ComponentFactoryResolver,
@@ -48,7 +48,7 @@ export class RassemblerComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    this.root.children = this.blueprints.root.children;
+    this.rassembly.host.children = this.blueprints.root.children;
   }
 
 }

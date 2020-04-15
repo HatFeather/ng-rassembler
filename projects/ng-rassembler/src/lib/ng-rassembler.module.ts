@@ -14,6 +14,7 @@ import {
 
 import {
   RassemblyContentDirective,
+  RassemblyDirective,
 } from './directives';
 
 @NgModule({
@@ -22,6 +23,7 @@ import {
     RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyContentDirective,
+    RassemblyDirective,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ import {
     RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyContentDirective,
+    RassemblyDirective,
   ],
   entryComponents: [
     

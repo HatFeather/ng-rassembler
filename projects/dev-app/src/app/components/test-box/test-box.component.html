@@ -1,3 +1,13 @@
-<div class="content-container" [style.background-color]="data.color" [style.height]="data.height">
-    {{ data.text }}
+<div class="content-container" [style.background-color]="data.color" [style.min-height]="data.height">
+    <p>{{ data.text }}</p>
+    <button mat-button color="primary">Primary</button>
+
+    <p>
+        there should be a sub rassembly if one was specified
+    </p>
+
+    <div>
+        <ng-linear-rassembly rassembly></ng-linear-rassembly>
+    </div>
+
 </div>

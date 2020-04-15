@@ -1,5 +1,6 @@
 import {
   Component,
+  Injector,
 } from '@angular/core';
 
 import { RassemblerComponent } from '../rassembler';
@@ -18,8 +19,10 @@ import { RassemblyComponent } from '../rassembly';
 })
 export class LinearRassemblyComponent extends RassemblyComponent {
 
-  constructor(rassembler: RassemblerComponent) {
-    super(rassembler);
+  constructor(
+    injector: Injector
+  ) {
+    super(injector);
   }
 
 }
