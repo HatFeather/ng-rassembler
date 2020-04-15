@@ -3,7 +3,10 @@ import { RassemblerNode } from "./rassembler-node";
 
 export interface RassemblerBlueprints {
 
-    mapping: Map<String, Type<any>>;
+    componentMapping: {
+        tag: String,
+        component: Type<any>,
+    }[];
 
     root: RassemblerNode;
 

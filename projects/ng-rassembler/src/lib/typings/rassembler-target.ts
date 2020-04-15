@@ -1,6 +1,6 @@
 
-export interface RassemblerTarget {
+export interface RassemblerTarget<T = any> {
 
-    data: any;
+    data: T;
 
 }

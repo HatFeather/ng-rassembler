@@ -9,7 +9,7 @@ import { RassemblerBlueprints } from '../../typings';
 @Component({
   selector: 'ng-rassembler',
   templateUrl: './rassembler.component.html',
-  styleUrls: ['./rassembler.component.css']
+  styleUrls: ['./rassembler.component.scss']
 })
 export class RassemblerComponent implements OnInit {
 

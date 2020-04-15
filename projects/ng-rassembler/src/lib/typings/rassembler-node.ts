@@ -1,10 +1,10 @@
 
 export interface RassemblerNode {
 
-    tag: String;
+    tag?: String;
     
-    children: RassemblerNode[];
+    children?: RassemblerNode[];
 
-    data: any;
+    data?: any;
 
 }
