@@ -10,7 +10,7 @@ export class RassemblerBlueprintBuilder {
   constructor() { }
 
   fromJson(
-    obj: any,
+    json: any,
   ): RassemblerBlueprints {
     return null;
   }

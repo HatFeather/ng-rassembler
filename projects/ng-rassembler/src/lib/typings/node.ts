@@ -5,4 +5,6 @@ export interface RassemblerNode {
     
     children: RassemblerNode[];
 
+    data: any;
+
 }
