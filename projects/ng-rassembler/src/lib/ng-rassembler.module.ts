@@ -3,7 +3,6 @@ import {
 } from '@angular/core';
 
 import {
-  RassemblyComponent,
   LinearRassemblyComponent,
 } from './components';
 
@@ -13,7 +12,6 @@ import {
 
 @NgModule({
   declarations: [
-    RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyDirective,
   ],
@@ -21,7 +19,6 @@ import {
 
   ],
   exports: [
-    RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyDirective,
   ],

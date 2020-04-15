@@ -1,10 +1,15 @@
-# Recursive Assembler
+# Rassembler
 
 This module provides a way to recursively assemble trees of typed objects
 based on a string-to-type mapping. This includes converting a json hierarchy
 into a component hierarchy.
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+
+## Getting started
+
+- components used by the rassembler must be entry components
+- 
 
 ## Notes
 

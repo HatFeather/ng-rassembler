@@ -10,12 +10,14 @@ import {
 
 import { LinearRassemblyPageComponent } from './pages/linear-rassembly-page/linear-rassembly-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { TestBoxComponent } from './components/test-box/test-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LinearRassemblyPageComponent,
     HomePageComponent,
+    TestBoxComponent,
   ],
   imports: [
     BrowserModule,
