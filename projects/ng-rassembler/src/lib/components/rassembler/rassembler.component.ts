@@ -4,10 +4,16 @@ import {
   ComponentFactoryResolver,
   ContentChild,
   AfterContentInit,
+  Type,
 } from '@angular/core';
 
-import { RassemblerBlueprints } from '../../typings';
-import { RassemblyComponent } from '../rassembly';
+import {
+  RassemblerBlueprints,
+} from '../../typings';
+
+import {
+  RassemblyComponent,
+} from '../rassembly';
 
 @Component({
   selector: 'ng-rassembler',
@@ -22,9 +28,26 @@ export class RassemblerComponent implements AfterContentInit {
     RassemblyComponent,
   ) root: RassemblyComponent;
 
+  private componentMap: Map<String, Type<any>>;
+
   constructor(
     private cfresolver: ComponentFactoryResolver,
-  ) { }
+  ) {
+
+  }
+
+  getComponent(tag: String): Type<any> {
+    // TODO improve performance
+    let mapping = this.blueprints.componentMapping;
+    
+    for (let i = 0; i < mapping.length; ++i) {
+      if (mapping[i].tag === tag) {
+        return mapping[i].component;
+      }
+    }
+
+    console.error(`[ng-rassembler] couldn't resolve component with tag '${tag}'`);
+  }
 
   ngAfterContentInit(): void {
     this.root.children = this.blueprints.root.children;
