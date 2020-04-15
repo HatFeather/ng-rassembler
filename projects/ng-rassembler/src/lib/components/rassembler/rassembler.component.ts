@@ -4,7 +4,7 @@ import {
   ComponentFactoryResolver,
   ContentChild,
   AfterContentInit,
-  Type,
+  ComponentFactory,
 } from '@angular/core';
 
 import {
@@ -28,34 +28,27 @@ export class RassemblerComponent implements AfterContentInit {
     RassemblyComponent,
   ) root: RassemblyComponent;
 
-  private componentMap: Map<String, Type<any>>;
-
   constructor(
     private cfresolver: ComponentFactoryResolver,
-  ) {
+  ) { }
 
-  }
+  getComponentFactory(tag: String): ComponentFactory<any> {
 
-  getComponent(tag: String): Type<any> {
     // TODO improve performance
     let mapping = this.blueprints.componentMapping;
-    
+
     for (let i = 0; i < mapping.length; ++i) {
       if (mapping[i].tag === tag) {
-        return mapping[i].component;
+        let componentType = mapping[i].componentType;
+        return this.cfresolver.resolveComponentFactory(componentType);
       }
     }
 
-    console.error(`[ng-rassembler] couldn't resolve component with tag '${tag}'`);
+    console.error(`ng-rassembler couldn't resolve component with tag '${tag}'`);
   }
 
   ngAfterContentInit(): void {
     this.root.children = this.blueprints.root.children;
-
-    console.log('after content init');
-    console.log(`comp: ${this.root}`);
-    console.log(`blup: ${this.blueprints.root.children[0].tag}`);
-    console.log(`host: ${this.root.children[0].tag}`);
   }
 
 }

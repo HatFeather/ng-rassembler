@@ -30,5 +30,8 @@ import { TestBoxComponent } from './components/test-box/test-box.component';
   bootstrap: [
     AppComponent,
   ],
+  entryComponents: [
+    TestBoxComponent,
+  ],
 })
 export class AppModule { }

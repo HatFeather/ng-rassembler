@@ -3,6 +3,10 @@ import {
 } from '@angular/core';
 
 import {
+  BrowserModule
+} from '@angular/platform-browser';
+
+import {
   RassemblerComponent,
   RassemblyComponent,
   LinearRassemblyComponent,
@@ -20,7 +24,7 @@ import {
     RassemblyContentDirective,
   ],
   imports: [
-
+    BrowserModule,
   ],
   exports: [
     RassemblerComponent,
@@ -29,8 +33,7 @@ import {
     RassemblyContentDirective,
   ],
   entryComponents: [
-    RassemblyComponent,
-    LinearRassemblyComponent,
+    
   ],
 })
 export class NgRassemblerModule { }

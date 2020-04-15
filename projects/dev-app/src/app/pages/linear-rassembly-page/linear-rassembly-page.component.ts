@@ -11,7 +11,7 @@ export class LinearRassemblyPageComponent implements OnInit {
 
   blueprints: RassemblerBlueprints = {
     componentMapping: [
-      { tag: 'test-box', component: TestBoxComponent },
+      { tag: 'test-box', componentType: TestBoxComponent },
     ],
     root: {
       children: [
@@ -19,7 +19,14 @@ export class LinearRassemblyPageComponent implements OnInit {
           tag: 'test-box',
           data: {
             color: '#00FF00',
-            text: 'This is the top component!'
+            text: 'This is the first component!'
+          },
+        },
+        {
+          tag: 'test-box',
+          data: {
+            color: '#FF0000',
+            text: 'This is the second component!'
           },
         }
       ],

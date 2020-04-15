@@ -4,6 +4,6 @@ export interface RassemblerComponentMapping {
 
     tag: String;
 
-    component: Type<any>;
+    componentType: Type<any>;
     
 }
