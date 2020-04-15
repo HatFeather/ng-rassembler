@@ -4,9 +4,9 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[rassembly]'
+  selector: '[rassemblyContent]'
 })
-export class RassemblyDirective {
+export class RassemblyContentDirective {
 
   constructor(
     public viewContainerRef: ViewContainerRef,

@@ -3,12 +3,11 @@ import {
   Input,
   ViewChild,
   OnInit,
-  Injector,
   Host,
 } from '@angular/core';
 
 import { RassemblerNode } from '../../typings';
-import { RassemblyDirective } from '../../directives';
+import { RassemblyContentDirective } from '../../directives';
 import { RassemblerComponent } from '../rassembler';
 
 @Component({ template: '' })
@@ -17,9 +16,9 @@ export class RassemblyComponent implements OnInit {
   @Input() children: RassemblerNode[];
 
   @ViewChild(
-    RassemblyDirective,
+    RassemblyContentDirective,
     { static: true },
-  ) rassemblyHost: RassemblyDirective;
+  ) content: RassemblyContentDirective;
 
   constructor(
     @Host() private rassembler: RassemblerComponent

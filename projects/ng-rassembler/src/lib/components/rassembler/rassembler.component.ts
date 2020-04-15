@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 import { RassemblerBlueprints } from '../../typings';
-import { RassemblyDirective } from '../../directives';
+import { RassemblyComponent } from '../rassembly';
 
 @Component({
   selector: 'ng-rassembler',
@@ -19,17 +19,20 @@ export class RassemblerComponent implements AfterContentInit {
   @Input() blueprints: RassemblerBlueprints;
 
   @ContentChild(
-    RassemblyDirective,
-  ) rassemblyRoot: RassemblyDirective;
+    RassemblyComponent,
+  ) root: RassemblyComponent;
 
   constructor(
     private cfresolver: ComponentFactoryResolver,
   ) { }
 
   ngAfterContentInit(): void {
+    this.root.children = this.blueprints.root.children;
+
     console.log('after content init');
-    console.log(`comp: ${this.rassemblyRoot}`);
+    console.log(`comp: ${this.root}`);
     console.log(`blup: ${this.blueprints.root.children[0].tag}`);
+    console.log(`host: ${this.root.children[0].tag}`);
   }
 
 }

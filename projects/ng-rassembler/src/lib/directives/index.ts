@@ -1,1 +1,1 @@
-export * from './rassembly.directive';
+export * from './rassembly-content.directive';

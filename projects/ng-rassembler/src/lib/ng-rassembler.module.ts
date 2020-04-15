@@ -9,7 +9,7 @@ import {
 } from './components';
 
 import {
-  RassemblyDirective,
+  RassemblyContentDirective,
 } from './directives';
 
 @NgModule({
@@ -17,7 +17,7 @@ import {
     RassemblerComponent,
     RassemblyComponent,
     LinearRassemblyComponent,
-    RassemblyDirective,
+    RassemblyContentDirective,
   ],
   imports: [
 
@@ -26,7 +26,7 @@ import {
     RassemblerComponent,
     RassemblyComponent,
     LinearRassemblyComponent,
-    RassemblyDirective,
+    RassemblyContentDirective,
   ],
   entryComponents: [
     RassemblyComponent,
