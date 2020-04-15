@@ -5,6 +5,6 @@ export interface RassemblerBlueprints {
 
     mapping: Map<String, Type<any>>;
 
-    nodes: RassemblerNode[];
-    
+    root: RassemblerNode;
+
 }

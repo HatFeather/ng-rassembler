@@ -13,10 +13,12 @@ import {
 import {
   RassemblerService,
 } from './services';
+import { LinearRassemblyComponent } from './components/linear-rassembly/linear-rassembly.component';
 
 @NgModule({
   declarations: [
     RassemblyComponent,
+    LinearRassemblyComponent,
     RassemblyDirective,
     RassemblerService,
   ],
@@ -25,6 +27,7 @@ import {
   ],
   exports: [
     RassemblyComponent,
+    LinearRassemblyComponent,
     RassemblyDirective,
     RassemblerService,
   ]
