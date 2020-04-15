@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import { NgModule } from '@angular/core';
-import { NgRassemblerComponent } from './ng-rassembler.component';
-
-@NgModule({
-  declarations: [
-    NgRassemblerComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    NgRassemblerComponent
-  ]
-=======
 import {
   NgModule,
 } from '@angular/core';
@@ -39,6 +25,5 @@ import {
     LinearRassemblyComponent,
     RassemblyDirective,
   ],
->>>>>>> tmp
 })
 export class NgRassemblerModule { }
