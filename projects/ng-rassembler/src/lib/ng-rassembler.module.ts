@@ -21,7 +21,9 @@ import {
 
   ],
   exports: [
-
+    RassemblyComponent,
+    LinearRassemblyComponent,
+    RassemblyDirective,
   ],
 })
 export class NgRassemblerModule { }
