@@ -5,12 +5,14 @@ import { NgRassemblerModule } from '../ng-rassembler.module';
 @Injectable({
   providedIn: NgRassemblerModule,
 })
-export class Rassembler {
+export class RassemblerBlueprintBuilder {
 
   constructor() { }
 
-  public loadFromBlueprints(
-    blueprints: RassemblerBlueprints,
-  ): void { }
+  fromJson(
+    obj: any,
+  ): RassemblerBlueprints {
+    return null;
+  }
 
 }

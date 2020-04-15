@@ -4,6 +4,7 @@ import {
 
 import {
   RassemblyComponent,
+  LinearRassemblyComponent,
 } from './components';
 
 import {
@@ -11,16 +12,15 @@ import {
 } from './directives';
 
 import {
-  RassemblerService,
+  Rassembler,
 } from './services';
-import { LinearRassemblyComponent } from './components/linear-rassembly/linear-rassembly.component';
 
 @NgModule({
   declarations: [
     RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyDirective,
-    RassemblerService,
+    Rassembler,
   ],
   imports: [
 
@@ -29,7 +29,7 @@ import { LinearRassemblyComponent } from './components/linear-rassembly/linear-r
     RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyDirective,
-    RassemblerService,
+    Rassembler,
   ]
 })
 export class NgRassemblerModule { }
