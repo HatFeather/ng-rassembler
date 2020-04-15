@@ -3,15 +3,16 @@ import {
   Input,
   ViewChild,
   ComponentFactoryResolver,
+  OnInit,
 } from '@angular/core';
 
 import { RassemblerNode } from '../../typings';
 import { RassemblyDirective } from '../../directives';
 
 @Component({ template: '' })
-export class RassemblyComponent {
+export class RassemblyComponent implements OnInit {
 
-  @Input() children: RassemblerNode[];
+  @Input() children: RassemblerNode[] | RassemblerNode;
 
   @ViewChild(
     RassemblyDirective,
@@ -21,5 +22,7 @@ export class RassemblyComponent {
   constructor(
     private cfresolver: ComponentFactoryResolver
   ) { }
+
+  ngOnInit(): void { }
 
 }
