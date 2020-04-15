@@ -1,32 +1,35 @@
 import {
   Component,
-  OnInit,
   Input,
   ComponentFactoryResolver,
-  ViewChild,
+  ContentChild,
+  AfterContentInit,
 } from '@angular/core';
 
 import { RassemblerBlueprints } from '../../typings';
-import { RassemblyRootDirective } from '../../directives';
+import { RassemblyDirective } from '../../directives';
 
 @Component({
   selector: 'ng-rassembler',
   templateUrl: './rassembler.component.html',
-  styleUrls: ['./rassembler.component.scss']
+  styleUrls: ['./rassembler.component.scss'],
 })
-export class RassemblerComponent implements OnInit {
+export class RassemblerComponent implements AfterContentInit {
 
   @Input() blueprints: RassemblerBlueprints;
 
-  @ViewChild(
-    RassemblyRootDirective,
-    { static: true },
-  ) rassemblyRoot: RassemblyRootDirective;
+  @ContentChild(
+    RassemblyDirective,
+  ) rassemblyRoot: RassemblyDirective;
 
   constructor(
     private cfresolver: ComponentFactoryResolver,
   ) { }
 
-  ngOnInit(): void { }
+  ngAfterContentInit(): void {
+    console.log('after content init');
+    console.log(`comp: ${this.rassemblyRoot}`);
+    console.log(`blup: ${this.blueprints.root.children[0].tag}`);
+  }
 
 }
