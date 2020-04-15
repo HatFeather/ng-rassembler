@@ -11,6 +11,7 @@ import {
 import {
   RassemblyDirective,
 } from './directives';
+import { RassemblerDirective } from './directives/rassembler.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {
     RassemblyComponent,
     LinearRassemblyComponent,
     RassemblyDirective,
+    RassemblerDirective,
   ],
   imports: [
 
