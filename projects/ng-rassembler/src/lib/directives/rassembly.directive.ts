@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[rassembly-host]'
+  selector: '[rassembly]'
 })
 export class RassemblyDirective {
 

@@ -12,7 +12,7 @@ import { RassemblyDirective } from '../../directives';
 @Component({ template: '' })
 export class RassemblyComponent implements OnInit {
 
-  @Input() children: RassemblerNode[] | RassemblerNode;
+  @Input() children: RassemblerNode[];
 
   @ViewChild(
     RassemblyDirective,

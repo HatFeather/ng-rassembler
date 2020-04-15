@@ -1,10 +1,13 @@
 import {
   Component,
   OnInit,
-  Input
+  Input,
+  ComponentFactoryResolver,
+  ViewChild,
 } from '@angular/core';
 
 import { RassemblerBlueprints } from '../../typings';
+import { RassemblyRootDirective } from '../../directives';
 
 @Component({
   selector: 'ng-rassembler',
@@ -15,7 +18,14 @@ export class RassemblerComponent implements OnInit {
 
   @Input() blueprints: RassemblerBlueprints;
 
-  constructor() { }
+  @ViewChild(
+    RassemblyRootDirective,
+    { static: true },
+  ) rassemblyRoot: RassemblyRootDirective;
+
+  constructor(
+    private cfresolver: ComponentFactoryResolver,
+  ) { }
 
   ngOnInit(): void { }
 
