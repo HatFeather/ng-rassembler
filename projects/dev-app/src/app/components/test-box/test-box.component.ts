@@ -14,7 +14,6 @@ export class TestBoxComponent implements OnInit, AfterContentInit, RassemblerTar
   constructor() { }
 
   ngAfterContentInit(): void {
-    console.log(this.data.text);
   }
 
   ngOnInit(): void { 

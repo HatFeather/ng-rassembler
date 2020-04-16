@@ -3,7 +3,6 @@ import {
   Injector,
 } from '@angular/core';
 
-import { RassemblerComponent } from '../rassembler';
 import { RassemblyComponent } from '../rassembly';
 
 @Component({
