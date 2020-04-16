@@ -6,16 +6,18 @@ import {
   AfterViewInit,
   OnDestroy,
   ComponentRef,
-  Renderer2,
   Injector,
+  OnInit,
+  ContentChildren,
+  TemplateRef,
 } from '@angular/core';
 
 import { RassemblerNode, RassemblerTarget } from '../../typings';
-import { RassemblyContentDirective, RassemblyDirective } from '../../directives';
+import { RassemblyContentDirective } from '../../directives';
 import { RassemblerComponent } from '../rassembler';
 
 @Component({ template: '' })
-export class RassemblyComponent implements AfterViewInit, OnDestroy {
+export class RassemblyComponent implements AfterViewInit, OnDestroy, OnInit {
 
   @Input() children: RassemblerNode[];
 
@@ -23,9 +25,10 @@ export class RassemblyComponent implements AfterViewInit, OnDestroy {
     RassemblyContentDirective,
   ) content: QueryList<RassemblyContentDirective>;
 
-  @ViewChildren(
-    RassemblyDirective
-  ) subRassemblies: QueryList<RassemblyDirective>;
+  @ContentChildren(
+    RassemblyComponent,
+    { descendants: true },
+  ) subrassemblies: QueryList<RassemblyComponent>;
 
   private componentRefs: Array<ComponentRef<any>>;
   private rassembler: RassemblerComponent;
@@ -34,6 +37,12 @@ export class RassemblyComponent implements AfterViewInit, OnDestroy {
     injector: Injector,
   ) {
     this.rassembler = injector.get(RassemblerComponent);
+  }
+
+  ngOnInit(): void { 
+    this.subrassemblies.changes.subscribe((rassemblies: QueryList<RassemblyComponent>) => {
+
+    });
   }
 
   ngOnDestroy(): void {
@@ -48,13 +57,16 @@ export class RassemblyComponent implements AfterViewInit, OnDestroy {
     this.ngOnDestroy();
 
     let contentList = this.content.toArray();
+    // let subrassemblyList = this.subrassemblies.toArray();
+    console.log(this.subrassemblies);
     let childCount = this.children ? this.children.length : 0;
 
     for (let i = 0; i < childCount; ++i) {
 
       let child = this.children[i];
-      let componentFactory = this.rassembler.getComponentFactory(child.tag);
+      let componentFactory = this.rassembler.resolveComponentFactory(child.tag);
       let viewContainerRef = contentList[i].viewContainerRef;
+      // let subrassembly = subrassemblyList[i];
 
       // create and set up the component
       viewContainerRef.clear();
@@ -63,28 +75,30 @@ export class RassemblyComponent implements AfterViewInit, OnDestroy {
 
       // this child exists outside the angular lifecycle and must be initialized separately
       component.changeDetectorRef.detectChanges();
-      this.subRassemblies.notifyOnChanges();
       this.componentRefs.push(component);
 
-      // recursively initialize the sub-assemblies after the DOM updates
-      this.subRassemblies.changes.subscribe((rassemblies: QueryList<RassemblyDirective>) => {
-
-        console.log(`queried element: ${rassemblies.length}`);
-        console.log(`id element: ${document.getElementsByTagName("test")}`);
-
-        if (child.children && child.children.length > 0) {
-          return;
-        }
-
-        if (rassemblies.length > 1) {
-          console.error(`ng-rassembler found more than one rassembly component` +
-            `under the ${child.tag} component. This is not currently supported.`);
-          return;
-        }
-
+      // recursively initialize the sub-assemblies
+      // if (child.children && child.children.length > 0) {
         
+      // }
+
+      this.subrassemblies.changes.subscribe((rassemblies: QueryList<RassemblyComponent>) => {
+        // console.log(rassemblies.toArray());
+
+      //   console.log(`queried element: ${rassemblies.length}`);
+
+      //   if (child.children && child.children.length > 0) {
+      //     return;
+      //   }
+
+      //   if (rassemblies.length > 1) {
+      //     console.error(`ng-rassembler found more than one rassembly component` +
+      //       `under the ${child.tag} component. This is not currently supported.`);
+      //     return;
+      //   }
+
       });
-      
+
     }
   }
 }

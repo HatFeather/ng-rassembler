@@ -24,5 +24,5 @@ export class LinearRassemblyComponent extends RassemblyComponent {
   ) {
     super(injector);
   }
-
+  
 }

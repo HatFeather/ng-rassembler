@@ -44,7 +44,7 @@ export class LinearRassemblyPageComponent implements OnInit {
               data: {
                 color: '#00FFFF',
                 text: 'This is the second component\'s second child!',
-                height: '120px',
+                height: '280px',
               },
             },
           ],
@@ -54,7 +54,7 @@ export class LinearRassemblyPageComponent implements OnInit {
           data: {
             color: '#FF00FF',
             text: 'This is the third component!',
-            height: '120px',
+            height: '230px',
           },
         },
         {
