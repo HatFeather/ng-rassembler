@@ -9,13 +9,8 @@ import {
   OnInit,
 } from '@angular/core';
 
-import {
-  RassemblerBlueprints,
-} from '../../typings';
-
-import {
-  RassemblyComponent
-} from '../rassembly';
+import { RassemblerBlueprints } from '../../typings';
+import { RassemblyComponent } from '../rassembly';
 
 @Component({
   selector: 'ng-rassembler',
