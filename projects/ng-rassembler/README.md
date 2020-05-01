@@ -1,7 +1,7 @@
 # Rassembler
 
-This module provides a way to recursively assemble trees of components
-based on json data.
+This module provides a way to recursively assemble lists of
+components based on a json schema.
 
 The API for this package is still in progress.
 
@@ -9,12 +9,12 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Limitations
 
-This package does not currently support recursive rassemblies. 
+This package does not currently support recursive rassemblies,
+but will be added in the future.
 
 ## Notes
 
 - components used by the rassembler must be entry components
-
 
 ## Build
 
