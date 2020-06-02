@@ -46,7 +46,7 @@ export class RassemblerComponent implements AfterContentInit, OnInit {
   }
 
   ngAfterContentInit(): void {
-    this.rassembly.children = this.blueprints.root.children;
+    this.rassembly.children = this.blueprints.root?.children ?? [];
   }
 
   private buildComponentTypeMap(): Map<String, Type<any>> {

@@ -3,8 +3,8 @@ import {
 } from '@angular/core';
 
 import {
-  BrowserModule
-} from '@angular/platform-browser';
+  CommonModule
+} from '@angular/common';
 
 import {
   RassemblerComponent,
@@ -24,7 +24,7 @@ import {
     RassemblyContentDirective,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
   ],
   exports: [
     RassemblerComponent,
