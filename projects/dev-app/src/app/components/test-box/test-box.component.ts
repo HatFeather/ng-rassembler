@@ -9,7 +9,7 @@ import { TestBoxData } from './test-box-data';
 })
 export class TestBoxComponent implements OnInit, AfterContentInit, RassemblerTarget<TestBoxData> {
 
-  @Input() data: TestBoxData;
+  @Input() public data: TestBoxData;
 
   constructor() { }
 

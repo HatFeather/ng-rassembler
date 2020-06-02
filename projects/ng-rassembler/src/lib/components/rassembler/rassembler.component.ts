@@ -19,7 +19,7 @@ import { RassemblyComponent } from '../rassembly';
 })
 export class RassemblerComponent implements AfterContentInit, OnInit {
 
-  @Input() blueprints: RassemblerBlueprints;
+  @Input() public blueprints: RassemblerBlueprints;
 
   @ContentChild(
     RassemblyComponent,

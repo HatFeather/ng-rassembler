@@ -17,7 +17,7 @@ import { RassemblerComponent } from '../rassembler';
 @Component({ template: '' })
 export class RassemblyComponent implements AfterViewInit, OnDestroy, OnInit {
 
-  @Input() children: RassemblerNode[];
+  @Input() public children: RassemblerNode[];
 
   @ViewChildren(
     RassemblyContentDirective,
